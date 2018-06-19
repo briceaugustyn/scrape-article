@@ -90,7 +90,7 @@ $("#button_erase").click( function()
   // Empty the notes section
   $("#articles").empty();
 });
-  
+alert('erased');
 }
 );
 
@@ -123,13 +123,25 @@ alert('scrape complete');
 
 $("#button_update").click( function()
 {
-    $.ajax({
-      method: "GET",
-      url: "/"
-    })
-// With that done
-.then(function(data) {
-  // Log the response
+   
+  $.getJSON("/articles", function(data) {
+    //   // For each one
+    for (var i = 0; i < data.length; i++) {
+      // Display the apropos information on the page
+      $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    }
+    //  });
+  
+  
+  
+  
+//   $.ajax({
+//       method: "GET",
+//       url: "/"
+//     })
+// // With that done
+// .then(function(data) {
+//   // Log the response
   alert('client updated');
 
 });
