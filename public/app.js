@@ -83,7 +83,6 @@ $("#button_erase").click( function()
       url: "/erase"
     })
 
-
 // With that done
 .then(function(data) {
   // Log the response
@@ -117,5 +116,23 @@ $("#button_scrape").click( function()
 alert('scrape complete');
 
 
+}
+);
+
+
+
+$("#button_update").click( function()
+{
+    $.ajax({
+      method: "GET",
+      url: "/"
+    })
+// With that done
+.then(function(data) {
+  // Log the response
+  alert('client updated');
+
+});
+  
 }
 );
