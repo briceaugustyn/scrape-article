@@ -124,7 +124,7 @@ alert('scrape complete');
 $("#button_update").click( function()
 {
     $.ajax({
-      method: "POST",
+      method: "GET",
       url: "/"
     })
 // With that done
